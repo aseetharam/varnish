@@ -44,29 +44,19 @@ $color-mode-type: data;
 // existing light themed sass file - these
 // are soley for a dark mode
 
-// // Darken any images and desaturate
-// .img {
-//   filter: brightness(80%) saturate(80%);
-// }
-// // Convert any logo to off white
-// .large-logo > img {
-//   filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(52deg) brightness(105%) contrast(101%);
-// }
-//
-// .small-logo {
-//   filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(52deg) brightness(105%) contrast(101%);
-// }
-//
-    .large-logo>img,
-    .small-logo {
-      filter: none;
-    }
-  
-    // Darken any images and desaturate
-    .img {
-      filter: brightness(80%) saturate(80%);
-    }
-    
+  // Darken any images and desaturate
+  .img {
+    filter: brightness(80%) saturate(80%);
+  }
+  // Convert any logo to off white
+  .large-logo > img {
+    filter: brightness(100);
+  }
+
+  .small-logo {
+    filter: brightness(100);
+  }
+
   // Darken alpha, beta etc. buttons
   .text-bg-danger {
     // var(--bs-danger-border-subtle) tinted

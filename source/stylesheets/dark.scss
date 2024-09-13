@@ -2,6 +2,7 @@ $color-mode-type: data;
 
 // Theme toggle from themetoggle.scss
 @include color-mode(dark) {
+
   // Div styling for theme toggle
   #theme-selector {
     button:focus-visible {
@@ -15,9 +16,11 @@ $color-mode-type: data;
       opacity: 90%;
       fill: var(--bs-body-color);
     }
+
     .dropdown-menu .dropdown-item.active {
       color: #000;
       background-color: shade-color($bright-blue, 10%);
+
       .bi {
         fill: #000;
       }
@@ -28,11 +31,13 @@ $color-mode-type: data;
   // a part of the phone sreen sidebar
   @include media-breakpoint-down(md) {
     #theme-selector {
+
       // Same color on hover as the
       // Learner View text
       button#bd-theme:hover {
         color: var(--bs-link-hover-color);
         text-decoration: underline;
+
         .bi {
           fill: var(--bs-link-hover-color);
         }
@@ -40,27 +45,29 @@ $color-mode-type: data;
     }
   }
 
-// This section does not correspond to an
-// existing light themed sass file - these
-// are soley for a dark mode
+  // This section does not correspond to an
+  // existing light themed sass file - these
+  // are soley for a dark mode
 
   // Darken any images and desaturate
   .img {
     filter: brightness(80%) saturate(80%);
   }
+
   // Convert any logo to off white
-  .large-logo > img {
-    filter: brightness(100);
+  .large-logo>img {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(52deg) brightness(105%) contrast(101%);
   }
 
   .small-logo {
-    filter: brightness(100);
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(52deg) brightness(105%) contrast(101%);
   }
 
   // Darken alpha, beta etc. buttons
   .text-bg-danger {
     // var(--bs-danger-border-subtle) tinted
     background-color: tint-color(rgb(132, 32, 41), 5%) !important;
+
     a.alert-link {
       color: #fff;
     }
@@ -68,6 +75,7 @@ $color-mode-type: data;
 
   .text-bg-warning {
     background-color: var(--bs-warning-border-subtle) !important;
+
     a.alert-link {
       color: #fff;
     }
@@ -75,6 +83,7 @@ $color-mode-type: data;
 
   .text-bg-info {
     background-color: var(--bs-info-border-subtle) !important;
+
     a.alert-link {
       color: #fff;
     }
@@ -83,6 +92,7 @@ $color-mode-type: data;
   .peer-reviewed {
     background-color: var(--bs-tertiary-bg);
     border-color: shade-color($light-purple, 40%);
+
     a.alert-link {
       color: #fff;
     }
@@ -131,66 +141,82 @@ $color-mode-type: data;
 
   }
 
-// From styles.css.scss
+  // From styles.css.scss
   h1 {
     color: var(--bs-body-color);
   }
+
   h2 {
     color: var(--bs-body-color);
   }
+
   h3 {
     color: var(--bs-body-color);
   }
+
   h4 {
     color: var(--bs-body-color);
   }
+
   blockquote {
     border-left-color: var(--bs-light-border-subtle);
   }
+
   p {
     color: var(--bs-body-color);
   }
+
   a {
     color: var(--bs-link-hover-color);
   }
+
   #search-button {
     color: #fff;
   }
-  .table-striped > tbody > tr:nth-of-type(even) > * {
+
+  .table-striped>tbody>tr:nth-of-type(even)>* {
     background: var(--bs-tertiary-bg);
   }
-  tbody > tr:nth-of-type(even) > * {
+
+  tbody>tr:nth-of-type(even)>* {
     background: var(--bs-tertiary-bg);
   }
+
   .btn-primary-outline {
     border: 1px solid $bright-blue;
     color: $bright-blue;
   }
+
   .btn-primary-outline:hover {
     color: $bright-blue;
     background: $very-light-blue;
   }
+
   .btn-primary-outline:active {
     color: var(--bs-highlight-color);
     background: $bright-blue;
   }
+
   .figcaption {
     border-top: 1px solid var(--bs-body-color);
     background: var(--bs-tertiary-bg);
   }
+
   .bottom-pagination {
     border-top: 1px solid var(--bs-border-color);
   }
 
-// From callouts.scss
+  // From callouts.scss
   /* Basic (gray callout) */
   .callout {
     border-left: 10px solid var(--bs-light-border-subtle);
   }
+
   .callout-square {
     color: var(--bs-body-color);
     background: var(--bs-light-border-subtle);
   }
+
   .callout-inner {
     background: var(--bs-tertiary-bg);
   }
@@ -256,6 +282,7 @@ $color-mode-type: data;
 
   .challenge {
     border-left: 10px solid shade-color($yellow, 50%);
+
     h4 {
       color: #fff;
     }
@@ -273,21 +300,26 @@ $color-mode-type: data;
       background: shade-color($yellow, 50%);
       color: #fff;
       box-shadow: none;
+
       &:focus-visible {
         outline-color: var(--bs-info-border-subtle);
         outline-width: 4px;
         outline-style: solid;
       }
     }
+
     .accordion-item {
       border-color: var(--bs-body-bg);
     }
+
     .accordion-body {
       background: var(--bs-tertiary-bg);
     }
+
     h2 {
       border-left: 10px shade-color($yellow, 50%) solid;
     }
+
     h4 {
       color: #fff;
     }
@@ -297,33 +329,37 @@ $color-mode-type: data;
 
   .spoiler-accordion {
     @extend .learner-accordion;
+
     .spoiler-button {
       background: var(--bs-tertiary-bg);
       border-color: var(--bs-body-color);
       color: var(--bs-body-color);
+
       &:focus-visible {
         outline-color: var(--bs-info-border-subtle);
         outline-width: 4px;
         outline-style: solid;
       }
+
       h3.collapsed {
         color: var(--bs-body-color);
       }
     }
+
     .note-square {
       color: var(--bs-body-color);
       background: var(--bs-info-border-subtle);
     }
   }
 
-// From codeblocks.scss
-  .codewrapper > pre:focus {
+  // From codeblocks.scss
+  .codewrapper>pre:focus {
     outline-color: var(--bs-info-border-subtle);
     outline-width: 4px;
     outline-style: solid;
   }
 
-  .codewrapper > pre:focus-visible {
+  .codewrapper>pre:focus-visible {
     outline-color: var(--bs-info-border-subtle);
     outline-width: 4px;
     outline-style: solid;
@@ -331,18 +367,23 @@ $color-mode-type: data;
 
   pre {
     background: var(--bs-tertiary-bg);
+
     &.input {
       border-top: 10px solid var(--bs-info-border-subtle);
     }
+
     &.sourceCode {
       border-top: 10px solid var(--bs-info-border-subtle);
     }
+
     &.error {
       border-top: 10px solid shade-color($red, 10%);
     }
+
     &.warning {
       border-top: 10px solid shade-color($orange, 10%);
     }
+
     &.output {
       border-top: 10px solid var(--bs-tertiary-color);
     }
@@ -360,10 +401,11 @@ $color-mode-type: data;
     border-bottom: 1px solid var(--bs-border-color);
   }
 
-// From header.scss
+  // From header.scss
   .nav-link {
     color: var(--bs-body-color);
   }
+
   .dropdown-item {
     color: var(--bs-body-color);
   }
@@ -387,27 +429,35 @@ $color-mode-type: data;
   .progress {
     background: tint-color($dark-blue, 10%);
   }
+
   .progress-bar {
     background: shade-color($blue, 20%);
   }
+
   .progress.library {
     background: tint-color($red, 20%);
   }
+
   .progress-bar.library {
     background: shade-color($light-red, 20%);
   }
+
   .progress.data {
     background: tint-color($dark-green, 20%);
   }
+
   .progress-bar.data {
     background: shade-color($light-green, 20%);
   }
+
   .progress.software {
     background: tint-color($dark-purple, 20%);
   }
+
   .progress-bar.software {
     background: shade-color($light-purple, 40%);
   }
+
   .lesson-progress {
     background: var(--bs-tertiary-bg);
   }
@@ -439,38 +489,50 @@ $color-mode-type: data;
     #to-top {
       filter: drop-shadow(0px 0px 5px var(--bs-body-bg)) drop-shadow(0px 0px 5px var(--bs-body-bg)) drop-shadow(0px 0px 5px var(--bs-body-bg)) drop-shadow(0px 0px 5px var(--bs-body-bg)) drop-shadow(0px 0px 5px var(--bs-body-bg));
     }
+
     #to-top i {
       box-shadow: 0px 0px 10px 10px var(--bs-body-bg);
     }
+
     .tablet-search-button {
       color: var(--bs-body-color);
     }
+
     .tablet-search-button:hover {
       color: var(--bs-body-color);
     }
-    .top-nav hr{
+
+    .top-nav hr {
       color: var(--bs-body-color);
     }
+
     .top-nav {
       border-top: 22px solid shade-color($blue, 20%);
+
       .peer-reviewed {
         border-color: shade-color($blue, 20%);
       }
     }
+
     .top-nav.data {
       border-top: 22px solid shade-color($light-green, 20%);
+
       .peer-reviewed {
         border-color: shade-color($light-green, 20%);
       }
     }
+
     .top-nav.software {
       border-top: 22px solid shade-color($light-purple, 40%);
+
       .peer-reviewed {
         border-color: shade-color($light-purple, 40%);
       }
     }
+
     .top-nav.library {
       border-top: 22px solid shade-color($light-red, 20%);
+
       .peer-reviewed {
         border-color: shade-color($light-red, 20%);
       }
@@ -482,12 +544,15 @@ $color-mode-type: data;
       border-bottom: 1px solid var(--bs-border-color);
       border-top: 22px solid shade-color($blue, 20%);
     }
+
     .bottom-nav.data {
       border-top: 22px solid shade-color($light-green, 20%);
     }
+
     .bottom-nav.software {
       border-top: 22px solid shade-color($light-purple, 40%);
     }
+
     .bottom-nav.library {
       border-top: 22px solid shade-color($light-red, 20%);
     }
@@ -499,32 +564,36 @@ $color-mode-type: data;
     }
   }
 
-// From instructornotes.scss
+  // From instructornotes.scss
   .instructor-note {
     .note-square {
       color: var(--bs-body-color);
       background: shade-color($magenta, 30%);
     }
+
     .accordion-body {
       background: var(--bs-light-border-subtle);
     }
+
     .accordion-button {
       background: var(--bs-light-border-subtle);
       border-color: var(--bs-body-color);
       color: var(--bs-body-color);
       box-shadow: none;
+
       &:focus-visible {
         outline-color: var(--bs-info-border-subtle);
         outline-width: 4px;
         outline-style: solid;
       }
+
       &.collapsed {
         color: var(--bs-body-color);
       }
     }
   }
 
-// From overview.scss
+  // From overview.scss
   .overview .card-header {
     color: var(--bs-body-color);
     background: tint-color($dark-purple, 20%);
@@ -540,46 +609,56 @@ $color-mode-type: data;
     }
   }
 
-// From skiplink.scss
-// Currently not used
-.skip-link {
-  border: 2px solid var(--bs-primary-border-subtle);
-  background: var(--bs-body-bg);
-  &:focus {
-    outline: 2px solid var(--bs-info-border-subtle);
-  }
-}
+  // From skiplink.scss
+  // Currently not used
+  .skip-link {
+    border: 2px solid var(--bs-primary-border-subtle);
+    background: var(--bs-body-bg);
 
-// From sidenav.scss
+    &:focus {
+      outline: 2px solid var(--bs-info-border-subtle);
+    }
+  }
+
+  // From sidenav.scss
   .sidebar {
     background: var(--bs-tertiary-bg);
     color: var(--bs-body-color);
+
     a {
       color: var(--bs-body-color);
+
       &:hover {
         color: $bright-blue;
       }
+
       &:focus {
         outline: 4px solid var(--bs-link-hover-color);
       }
     }
+
     .accordion-body {
       background: var(--bs-tertiary-bg);
     }
+
     .accordion-item {
       background: var(--bs-tertiary-bg);
     }
+
     .accordion-button {
       background: var(--bs-tertiary-bg);
+
       &:hover {
         color: var(--bs-link-hover-color);
         text-decoration: underline;
       }
+
       &:focus-visible {
         outline-color: var(--bs-info-border-subtle);
         outline-width: 4px;
         outline-style: solid;
       }
+
       &:not(.collapsed) {
         color: var(--bs-body-color);
       }
@@ -590,9 +669,10 @@ $color-mode-type: data;
     background: var(--bs-tertiary-bg);
   }
 
-// Dark mode syntax highlighting
-// Adapted from pkgdown version 2.0.7 (c) RStudio 2024
-  pre .img img, pre .r-plt img {
+  // Dark mode syntax highlighting
+  // Adapted from pkgdown version 2.0.7 (c) RStudio 2024
+  pre .img img,
+  pre .r-plt img {
     background-color: var(--bs-tertiary-bg);
   }
 
@@ -601,61 +681,260 @@ $color-mode-type: data;
     color: var(--bs-body-color);
   }
 
-  p > code {
+  p>code {
     background-color: var(--bs-tertiary-bg);
   }
 
   // CODE Style - arrow-dark theme
-  pre code         /* Normal         */ {color:#f8f8f2}
-  pre code span.al /* Alert          */ {color:#f07178; background-color:#2a0f15; font-weight: bold}
-  pre code span.an /* Annotation     */ {color:#d4d0ab}
-  pre code span.at /* Attribute      */ {color:#00e0e0}
-  pre code span.bn /* BaseN          */ {color:#d4d0ab}
-  pre code span.bu /* BuiltIn        */ {color:#abe338}
-  pre code span.cf /* ControlFlow    */ {color:#ffa07a; font-weight: bold}
-  pre code span.ch /* Char           */ {color:#abe338}
-  pre code span.cn /* Constant       */ {color:#ffd700}
-  pre code span.co /* Comment        */ {color:#f8f8f2; font-style: italic}
-  pre code span.cv /* CommentVar     */ {color:#ffd700}
-  pre code span.do /* Documentation  */ {color:#f8f8f2}
-  pre code span.dt /* DataType       */ {color:#ffa07a}
-  pre code span.dv /* DecVal         */ {color:#d4d0ab}
-  pre code span.er /* Error          */ {color:#f07178; text-decoration: underline}
-  pre code span.ex /* Extension      */ {color:#00e0e0; font-weight: bold}
-  pre code span.fl /* Float          */ {color:#d4d0ab}
-  pre code span.fu /* Function       */ {color:#ffa07a}
-  pre code span.im /* Import         */ {color:#abe338}
-  pre code span.in /* Information    */ {color:#d4d0ab}
-  pre code span.kw /* Keyword        */ {color:#ffa07a; font-weight: bold}
-  pre code span.op /* Operator       */ {color:#ffa07a}
-  pre code span.ot /* Other          */ {color:#00e0e0}
-  pre code span.pp /* Preprocessor   */ {color:#dcc6e0}
-  pre code span.re /* RegionMarker   */ {color:#00e0e0; background-color:#f8f8f2}
-  pre code span.sc /* SpecialChar    */ {color:#abe338}
-  pre code span.ss /* SpecialString  */ {color:#abe338}
-  pre code span.st /* String         */ {color:#abe338}
-  pre code span.va /* Variable       */ {color:#00e0e0}
-  pre code span.vs /* VerbatimString */ {color:#abe338}
-  pre code span.wa /* Warning        */ {color:#dcc6e0}
-  span.error   {font-weight: bolder;}
-  span.warning {font-weight: bolder;}
+  pre code
 
-// Tab styling from tabs.scss
-.nav-tabs .nav-link.active {
-  border-top-color: shade-color($bright-blue, 20%);
-  border-right-color: var(--bs-border-color);
-  border-left-color: var(--bs-border-color);
-}
+  /* Normal         */
+    {
+    color: #f8f8f2
+  }
 
-.nav-link[role="tab"][aria-selected="false"]:hover {
-  outline: 2px solid shade-color($bright-blue, 20%);
-}
+  pre code span.al
 
-div.tab-content {
-  border-width: var(--bs-border-width);
-  border-right-color: var(--bs-border-color);
-  border-left-color: var(--bs-border-color);
-  border-bottom-color: var(--bs-border-color);
-}
+  /* Alert          */
+    {
+    color: #f07178;
+    background-color: #2a0f15;
+    font-weight: bold
+  }
+
+  pre code span.an
+
+  /* Annotation     */
+    {
+    color: #d4d0ab
+  }
+
+  pre code span.at
+
+  /* Attribute      */
+    {
+    color: #00e0e0
+  }
+
+  pre code span.bn
+
+  /* BaseN          */
+    {
+    color: #d4d0ab
+  }
+
+  pre code span.bu
+
+  /* BuiltIn        */
+    {
+    color: #abe338
+  }
+
+  pre code span.cf
+
+  /* ControlFlow    */
+    {
+    color: #ffa07a;
+    font-weight: bold
+  }
+
+  pre code span.ch
+
+  /* Char           */
+    {
+    color: #abe338
+  }
+
+  pre code span.cn
+
+  /* Constant       */
+    {
+    color: #ffd700
+  }
+
+  pre code span.co
+
+  /* Comment        */
+    {
+    color: #f8f8f2;
+    font-style: italic
+  }
+
+  pre code span.cv
+
+  /* CommentVar     */
+    {
+    color: #ffd700
+  }
+
+  pre code span.do
+
+  /* Documentation  */
+    {
+    color: #f8f8f2
+  }
+
+  pre code span.dt
+
+  /* DataType       */
+    {
+    color: #ffa07a
+  }
+
+  pre code span.dv
+
+  /* DecVal         */
+    {
+    color: #d4d0ab
+  }
+
+  pre code span.er
+
+  /* Error          */
+    {
+    color: #f07178;
+    text-decoration: underline
+  }
+
+  pre code span.ex
+
+  /* Extension      */
+    {
+    color: #00e0e0;
+    font-weight: bold
+  }
+
+  pre code span.fl
+
+  /* Float          */
+    {
+    color: #d4d0ab
+  }
+
+  pre code span.fu
+
+  /* Function       */
+    {
+    color: #ffa07a
+  }
+
+  pre code span.im
+
+  /* Import         */
+    {
+    color: #abe338
+  }
+
+  pre code span.in
+
+  /* Information    */
+    {
+    color: #d4d0ab
+  }
+
+  pre code span.kw
+
+  /* Keyword        */
+    {
+    color: #ffa07a;
+    font-weight: bold
+  }
+
+  pre code span.op
+
+  /* Operator       */
+    {
+    color: #ffa07a
+  }
+
+  pre code span.ot
+
+  /* Other          */
+    {
+    color: #00e0e0
+  }
+
+  pre code span.pp
+
+  /* Preprocessor   */
+    {
+    color: #dcc6e0
+  }
+
+  pre code span.re
+
+  /* RegionMarker   */
+    {
+    color: #00e0e0;
+    background-color: #f8f8f2
+  }
+
+  pre code span.sc
+
+  /* SpecialChar    */
+    {
+    color: #abe338
+  }
+
+  pre code span.ss
+
+  /* SpecialString  */
+    {
+    color: #abe338
+  }
+
+  pre code span.st
+
+  /* String         */
+    {
+    color: #abe338
+  }
+
+  pre code span.va
+
+  /* Variable       */
+    {
+    color: #00e0e0
+  }
+
+  pre code span.vs
+
+  /* VerbatimString */
+    {
+    color: #abe338
+  }
+
+  pre code span.wa
+
+  /* Warning        */
+    {
+    color: #dcc6e0
+  }
+
+  span.error {
+    font-weight: bolder;
+  }
+
+  span.warning {
+    font-weight: bolder;
+  }
+
+  // Tab styling from tabs.scss
+  .nav-tabs .nav-link.active {
+    border-top-color: shade-color($bright-blue, 20%);
+    border-right-color: var(--bs-border-color);
+    border-left-color: var(--bs-border-color);
+  }
+
+  .nav-link[role="tab"][aria-selected="false"]:hover {
+    outline: 2px solid shade-color($bright-blue, 20%);
+  }
+
+  div.tab-content {
+    border-width: var(--bs-border-width);
+    border-right-color: var(--bs-border-color);
+    border-left-color: var(--bs-border-color);
+    border-bottom-color: var(--bs-border-color);
+  }
 
 }
